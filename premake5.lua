@@ -14,12 +14,18 @@ project "FLAC"
 
     defines {
         "FLAC__NO_DLL",
-        'PACKAGE_VERSION="1.4.3"'
+        'PACKAGE_VERSION="1.4.3"',
+        "FLAC__HAS_OGG"
     }
 
     includedirs {
         "src/libFLAC/include",
-        "include"
+        "include",
+        "../ogg/include"
+    }
+
+    links {
+        "ogg"
     }
 
     excludes {
